@@ -1,0 +1,254 @@
+/* --- Global Styles & Variables --- */
+:root {
+    --primary-color: #007BFF; /* A vibrant blue for calls to action */
+    --secondary-color: #6c757d; /* A subtle gray for secondary elements */
+    --dark-bg: #212529;      /* Dark background for header/footer */
+    --hero-bg: #343a40;      /* Slightly lighter gray for the hero section */
+    --light-bg: #f8f9fa;     /* Light gray for content sections */
+    --text-light: #f8f9fa;
+    --text-dark: #212529;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    line-height: 1.6;
+    color: var(--text-dark);
+    background-color: #fff;
+}
+
+.container {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 0 2rem;
+}
+
+/* --- Header & Navigation --- */
+.main-header {
+    background-color: var(--dark-bg);
+    color: var(--text-light);
+    padding: 1rem 0;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+.main-header .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo h1 {
+    font-size: 1.8rem;
+    font-weight: 700;
+}
+
+.logo a {
+    text-decoration: none;
+    color: var(--text-light);
+}
+
+.main-nav ul {
+    list-style: none;
+    display: flex;
+}
+
+.main-nav ul li a {
+    color: var(--text-light);
+    text-decoration: none;
+    padding: 0.5rem 1rem;
+    font-weight: 600;
+    transition: color 0.3s ease;
+}
+
+.main-nav ul li a:hover,
+.main-nav ul li a.active {
+    color: var(--primary-color);
+}
+
+/* --- Hero Section --- */
+#hero {
+    background-color: var(--hero-bg);
+    color: var(--text-light);
+    padding: 5rem 0;
+    text-align: left;
+}
+
+.hero-container {
+    display: flex;
+    align-items: center;
+    gap: 3rem;
+}
+
+.hero-content {
+    flex: 1; /* Takes up 50% of the space */
+}
+
+.hero-content .intro-text {
+    font-size: 1.2rem;
+}
+
+.hero-content .main-headline {
+    font-size: 3.5rem;
+    font-weight: 700;
+    margin: 0.5rem 0;
+    letter-spacing: 2px;
+}
+
+.hero-content .description {
+    font-size: 1.1rem;
+    max-width: 500px;
+    margin-bottom: 2rem;
+}
+
+.hero-image {
+    flex: 1;
+    text-align: center;
+}
+
+.hero-image img {
+    max-width: 100%;
+    width: 350px;
+    height: 350px;
+    object-fit: cover;
+    border-radius: 50%;
+    border: 5px solid var(--primary-color);
+}
+
+/* --- Buttons --- */
+.btn {
+    display: inline-block;
+    padding: 0.8rem 1.8rem;
+    text-decoration: none;
+    border-radius: 5px;
+    font-weight: 600;
+    transition: all 0.3s ease;
+}
+
+.btn-primary {
+    background-color: var(--primary-color);
+    color: #fff;
+    border: 2px solid var(--primary-color);
+}
+.btn-primary:hover {
+    background-color: transparent;
+    color: var(--primary-color);
+}
+
+.btn-secondary {
+    background-color: transparent;
+    color: var(--primary-color);
+    border: 2px solid var(--primary-color);
+}
+.btn-secondary:hover {
+    background-color: var(--primary-color);
+    color: #fff;
+}
+
+
+/* --- About Me Section --- */
+#about {
+    background-color: var(--light-bg);
+    padding: 5rem 0;
+}
+
+.about-container {
+    display: flex;
+    align-items: center;
+    gap: 3rem;
+}
+
+.about-image {
+    flex: 1;
+}
+
+.about-image img {
+    max-width: 100%;
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+}
+
+.about-content {
+    flex: 1.5; /* Give content a bit more space */
+}
+
+.about-content h3 {
+    font-size: 2rem;
+    font-weight: 700;
+}
+
+.title-underline {
+    width: 60px;
+    height: 4px;
+    background-color: var(--primary-color);
+    margin: 0.5rem 0 1.5rem 0;
+}
+
+.about-content p {
+    margin-bottom: 1rem;
+}
+
+
+/* --- Footer --- */
+.main-footer {
+    background-color: var(--dark-bg);
+    color: var(--secondary-color);
+    text-align: center;
+    padding: 1.5rem 0;
+}
+
+
+/* --- Responsive Design for smaller screens --- */
+@media (max-width: 768px) {
+    .main-header .container,
+    .hero-container,
+    .about-container {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .main-nav ul {
+        flex-direction: column;
+        margin-top: 1rem;
+    }
+    
+    .main-nav ul li {
+        margin: 0.5rem 0;
+    }
+
+    #hero {
+        padding: 3rem 0;
+    }
+
+    .hero-content .main-headline {
+        font-size: 2.5rem;
+    }
+
+    .hero-image {
+        margin-top: 2rem;
+    }
+
+    .hero-image img {
+        width: 250px;
+        height: 250px;
+    }
+    
+    .about-container {
+        gap: 2rem;
+    }
+
+    .about-content {
+        order: -1; /* Move text above image on mobile */
+    }
+    
+    .title-underline {
+        margin: 0.5rem auto 1.5rem auto; /* Center the underline */
+    }
+}
