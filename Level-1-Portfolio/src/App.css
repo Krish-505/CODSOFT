@@ -1,0 +1,21 @@
+.App {
+  text-align: center;
+}
+
+/* This will style all our main sections */
+.section-container {
+  min-height: 80vh; /* Make sections take up most of the screen height */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 2rem;
+}
+
+/* Add alternating background colors to see the sections clearly */
+#about {
+  background-color: #f4f4f4;
+}
+#contact {
+  background-color: #f4f4f4;
+}

@@ -1,0 +1,69 @@
+.home-container {
+  position: relative; 
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  color: #ffffff;
+  text-align: center;
+  padding: 0 2rem;
+  overflow: hidden;
+
+  /* 
+    FIX #1: Add the background color back.
+    This gives the white particles a dark canvas to be drawn on.
+  */
+  background-color: #1a202c;
+}
+
+/* 
+  FIX #2: This is the most important change.
+  We explicitly set the z-index of the home content so it sits on top of the particles,
+  but BELOW the Navbar, which has a z-index of 1000.
+*/
+.home-content {
+  position: relative;
+  z-index: 1; 
+}
+
+.home-title {
+  font-size: clamp(2.5rem, 5vw, 4.5rem); 
+  margin-bottom: 0.5rem;
+  font-weight: 700;
+  letter-spacing: 1px;
+}
+
+.home-subtitle {
+  font-size: clamp(1rem, 2.5vw, 1.25rem);
+  color: #a0aec0;
+  margin-bottom: 2rem;
+  max-width: 600px;
+}
+
+.cta-button {
+  background-color: #1abc9c;
+  color: white;
+  padding: 0.75rem 1.5rem;
+  border-radius: 5px;
+  text-decoration: none;
+  font-weight: bold;
+  font-size: 1rem;
+  transition: transform 0.3s ease, background-color 0.3s ease;
+  
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.cta-button:hover {
+  background-color: #16a085;
+  transform: translateY(-3px);
+}
+
+.cta-icon {
+  transition: transform 0.3s ease;
+}
+
+.cta-button:hover .cta-icon {
+  transform: translateX(5px);
+}
